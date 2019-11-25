@@ -11,32 +11,34 @@ class ControleurController extends AbstractController
     /**
      * @Route("/", name="accueil")
      */
-    public function index()
+    public function accueil()
     {
-        return new Response(" <h1> Bienvenue sur la page d'accueil de Prostages </h1> " );
+        return $this->render('controleur/index.html.twig', [
+          'titre'=>'le titre de ma page d\'accueil',
+        ]);
     }
-	
+
 	/**
      * @Route("/entreprises", name="entreprises")
      */
     public function entreprises()
     {
-        return new Response(" <h1> Cette page affichera la liste des entreprises proposant un stage <h1> " );
+        return $this->render('controleur/entreprises.html.twig');
     }
-	
+
 	/**
      * @Route("/formations", name="formations")
      */
     public function formations()
     {
-        return new Response(" <h1> Cette page affichera la liste des formations de l'IUT <h1> " );
+        return $this->render('controleur/formations.html.twig');
     }
-	
+
 	/**
      * @Route("/stages/{id}", name="stages")
      */
     public function stages(int $id)
     {
-        return new Response(" <h1> Cette page affichera le descriptif du stage ayant pour identifiant $id <h1> " );
+        return $this->render('controleur/stages.html.twig', ['id' => $id]);
     }
 }

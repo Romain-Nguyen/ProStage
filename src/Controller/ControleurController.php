@@ -12,7 +12,7 @@ class ControleurController extends AbstractController
      * @Route("/", name="accueil")
      */
     public function accueil()
-    {
+    {    
         return $this->render('controleur/index.html.twig', [
           'titre'=>'le titre de ma page d\'accueil',
         ]);

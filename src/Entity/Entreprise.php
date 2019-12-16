@@ -17,28 +17,24 @@ class Entreprise
     private $id;
 
     /**
-     * @ORM\Column(type="integer", length=5)
+     * @ORM\Column(type="string", length=30)
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=70)
+     * @ORM\Column(type="string", length=60)
      */
     private $adresse;
 
     /**
-     * @ORM\Column(type="string", length=80)
+     * @ORM\Column(type="string", length=10)
      */
     private $tel;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=60, nullable=true)
      */
     private $lienSite;
-
-    /**
-     * @ORM\Column(type="string", length=70, nullable=true)
-     */
 
     public function getId(): ?int
     {

@@ -17,22 +17,22 @@ class Stage
     private $id;
 
     /**
-     * @ORM\Column(type="integer", length=5)
+     * @ORM\Column(type="string", length=40)
      */
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="text")
      */
     private $description;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="date")
      */
     private $dateParution;
 
     /**
-     * @ORM\Column(type="date", length=10)
+     * @ORM\Column(type="string", length=50)
      */
     private $contact;
 

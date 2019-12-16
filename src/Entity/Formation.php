@@ -17,18 +17,9 @@ class Formation
     private $id;
 
     /**
-     * @ORM\Column(type="integer", length=5)
+     * @ORM\Column(type="string", length=40)
      */
     private $type;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $description;
-
-    /**
-     * @ORM\Column(type="text")
-     */
 
     public function getId(): ?int
     {
@@ -43,18 +34,6 @@ class Formation
     public function setType(string $type): self
     {
         $this->type = $type;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
 
         return $this;
     }

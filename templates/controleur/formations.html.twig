@@ -5,16 +5,23 @@
 {%block body%}
 <p> Cette page affichera la liste des formations. </p>
 
+<div class="row">
+
 {%for formation in listeFormation %}
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"> {{listeFormation.type}} </h5>
-    <p class="card-text"> {{listeFormation.description }} </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+
+<div class="col-md-3">
+      <div class="card">
+        <img src="http://lorempixel.com/200/200/" class="card-img-top" alt="Image">
+        <div class="card-body">
+          <h5 class="card-title"> {{ formation.type }} </h5>
+          <p class="card-text"> {{ formation.description }}</p>
+          <a href="#" class="btn btn-primary">En savoir plus...</a>
+        </div>
+      </div>
+    </div>
 
 {% endfor %}
+
+</div>
 
 {%endblock%}

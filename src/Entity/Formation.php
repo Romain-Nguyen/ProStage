@@ -24,6 +24,11 @@ class Formation
     private $type;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
+    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Stage", mappedBy="formations")
      */
     private $stages;
@@ -46,6 +51,18 @@ class Formation
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

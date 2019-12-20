@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\Entreprise;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,7 +13,7 @@ class ControleurController extends AbstractController
      * @Route("/", name="accueil")
      */
     public function accueil()
-    {    
+    {
         return $this->render('controleur/index.html.twig', [
           'titre'=>'le titre de ma page d\'accueil',
         ]);
@@ -23,7 +24,10 @@ class ControleurController extends AbstractController
      */
     public function entreprises()
     {
-        return $this->render('controleur/entreprises.html.twig');
+        $listeEntreprise = $this -> getDoctrine() -> getRepository(Entreprise::class) -> findAll();
+        return $this->render('controleur/entreprises.html.twig',[
+          "listeEntreprise" => $listeEntreprise
+        ]);
     }
 
 	/**

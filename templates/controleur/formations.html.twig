@@ -2,7 +2,19 @@
 
 {%block title%} Liste formations {%endblock%}
 
-
 {%block body%}
-<p> Cette page affichera la liste des formations de l'IUT. </p>
+<p> Cette page affichera la liste des formations. </p>
+
+{%for formation in listeFormation %}
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> {{listeFormation.type}} </h5>
+    <p class="card-text"> {{listeFormation.description }} </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+{% endfor %}
+
 {%endblock%}

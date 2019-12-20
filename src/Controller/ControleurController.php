@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 use App\Entity\Entreprise;
+use App\Entity\Formation;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -35,7 +36,10 @@ class ControleurController extends AbstractController
      */
     public function formations()
     {
-        return $this->render('controleur/formations.html.twig');
+        $listeFormation = $this -> getDoctrine() -> getRepository(Formation::class) -> findAll();
+        return $this->render('controleur/formations.html.twig', [
+          "listeFormation" => $listeFormation
+        ]);
     }
 
 	/**
